@@ -3,7 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>2024/11/28</title>
+    <title>Dairy</title>
   </head>
-  <body></body>
+  <style>
+    #current-time {
+      font-style: italic;
+      font-size: 14px;
+      font-family: "Times New Roman", Times, serif;
+    }
+  </style>
+  <body>
+    <div id="current-time"></div>
+    <script>
+      const dom = document.querySelector("#current-time");
+      const curretTime = new Date();
+      const year = curretTime.getFullYear();
+      const month = String(curretTime.getMonth() + 1).padStart(2, "0"); // 月份从0开始
+      const day = String(curretTime.getDate()).padStart(2, "0");
+      const hours = String(curretTime.getHours()).padStart(2, "0");
+      const minutes = String(curretTime.getMinutes()).padStart(2, "0");
+      const formattedTime = `${year}年${month}月${day}日${hours}时${minutes}分`;
+      dom.textContent = formattedTime;
+    </script>
+  </body>
 </html>
